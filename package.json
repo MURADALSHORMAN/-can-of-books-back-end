@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^9.0.2",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.9"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "-can-of-books-back-end",
+  "description": "",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MURADALSHORMAN/-can-of-books-back-end.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MURADALSHORMAN/-can-of-books-back-end/issues"
+  },
+  "homepage": "https://github.com/MURADALSHORMAN/-can-of-books-back-end#readme"
+}
