@@ -19,7 +19,7 @@ mongoose.connect('mongodb://localhost:27017/books', {
 });
 
 // require & create schema for our collection
-const userModel = require('./user');
+const userModel = require('./models/user');
 console.log(userModel);
 
 
@@ -30,7 +30,7 @@ function yousefSeed() {
     books: [
       {
         name: 'Fluids',
-        description: 'fluids dynamics',
+        description: 'fluid dynamics',
       },
       {
         name: 'The Power of Habit',
@@ -38,8 +38,8 @@ function yousefSeed() {
           'explain why habits exist and how they can be changed. With penetrating intelligence and an ability to distill vast amounts of information into engrossing narratives, Duhigg brings to life a whole new understanding of human nature and its potential for transformation.',
       },
       {
-        name: 'AutoCad',
-        description: 'drawing',
+        name: 'Heat Transfer',
+        description: 'How heat transfer between objects',
       },
     ],
   });
@@ -55,16 +55,16 @@ function muradSeed() {
     email: 'muradalshorman@gmail.com',
     books: [
       {
-        name: 'data analysis',
-        description: 'computer data anylisis',
+        name: 'HVAC',
+        description: 'heating, ventilation, and air conditioning',
       },
       {
-        name: 'forex',
-        description: 'analysis and trading forex market',
+        name: 'Creo3D',
+        description: 'Engineering drawing',
       },
       {
-        name: 'computer maintinance',
-        description: '*********************',
+        name: 'Mechanical Design',
+        description: 'Design of mechanical parts',
       },
     ],
   });
@@ -86,8 +86,8 @@ function booksPage(req, res) {
   const { email } = req.query;
   userModel.find({ email: email }, "books", function (error, userData) {
     if (error) res.send("Something went wrong!");
-    console.log(userData);
-    res.send(userData);
+    // console.log(userData[0].books);
+    res.send(userData[0].books);
   });
 }
 
