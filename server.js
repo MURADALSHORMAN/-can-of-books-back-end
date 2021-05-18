@@ -52,24 +52,25 @@ function yousefSeed() {
 
 function muradSeed() {
   const murad = new userModel({
-    email: '',
+    email: 'muradalshorman@gmail.com',
     books: [
       {
-        name: '',
-        description: '',
+        name: 'data analysis',
+        description: 'computer data anylisis',
       },
       {
-        name: '',
-        description: '',
+        name: 'forex',
+        description: 'analysis and trading forex market',
       },
       {
-        name: '',
-        description: '',
+        name: 'computer maintinance',
+        description: '*********************',
       },
     ],
   });
   murad.save();
 }
+// muradSeed();
 
 app.get("/", homePage);
 
