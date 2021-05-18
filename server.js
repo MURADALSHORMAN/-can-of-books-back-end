@@ -70,6 +70,7 @@ function muradSeed() {
   });
   murad.save();
 }
+// muradSeed();
 
 app.get("/", homePage);
 
