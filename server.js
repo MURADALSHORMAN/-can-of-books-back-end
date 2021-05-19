@@ -10,7 +10,7 @@ require("dotenv").config();
 const app = express();
 const port = process.env.PORT || 3839;
 app.use(cors());
-
+app.use(express.json());
 // connect express to mongo db
 
 mongoose.connect('mongodb://localhost:27017/books', {
@@ -101,8 +101,9 @@ app.post('/books', createbook);
 ////////////////////////////////////////////////////////////
 function createbook(req, res) {
    const { name, email, description } = req.body;
-    myOwnerModel.find({ email: email }, (error, ownerData) => {
-     
+   console.log(req.body);
+   userModel.find({ email: email }, (error, userData) => {
+     console.log(userData);
           userData[0].books.push({
           name: name,
           description: description
